@@ -1,0 +1,6 @@
+.box{
+    width: 200px;
+    aspect-ratio: 1/1;
+    background: gray;
+    border: 3px dashed #f00;
+}
