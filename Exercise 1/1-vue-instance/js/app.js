@@ -16,8 +16,8 @@ const app = Vue.createApp({
         }
     },
     methods:{
-        changeTitle(){
-            this.title="This is changed title..."
+        changeTitle(title){
+            this.title=title
         },
         updateCoords(moveText){
             this.coords.x=event.x;
