@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="js/app.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- <button @click="showBorder=!showBorder">Border '{{showBorder}}'</button> -->
+        <input type="text" v-model="bgColor">
+        <button @click="bgRed=!bgRed">Background Red '{{showBorder}}'</button>
+        
+        <div class="box" :style="{backgroundColor: bgColor}" :class="boxClasses"></div>
+    </div>
+</body>
+
+</html>
