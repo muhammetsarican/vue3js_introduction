@@ -4,7 +4,7 @@
 </template>
 <script>
 export default {
-    props:{
+    inject:{
         addNewTodo:{
             type: Function,
             required: true

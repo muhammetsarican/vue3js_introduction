@@ -1,7 +1,7 @@
 <template>
     <ul>
-        <li v-for="todoItem in todoList" :key="todoItem.id" class="d-flex justify-content-between align-items-center">
-            <TodoListItem @removeTodo="$emit('removeTodo', $event)" :title="todoItem.title" :id="todoItem.id" />
+        <li v-for="todoItem in ProvideData.todoList" :key="todoItem.id" class="d-flex justify-content-between align-items-center">
+            <TodoListItem :title="todoItem.title" :id="todoItem.id" />
         </li>
     </ul>
 </template>
@@ -12,11 +12,10 @@ export default {
         TodoListItem,
     },
     // props: ["todoList"]
-    props: {
-        todoList: {
-            type: Array,
-            required: true,
-            default: () => []
+    inject: {
+        ProvideData: {
+            type: Object,
+            required: true
         }
     }
 }

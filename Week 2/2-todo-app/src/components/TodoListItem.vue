@@ -1,6 +1,6 @@
 <template>
     <span>{{ title }}</span>
-    <button @click="$emit('removeTodo', id)" class="sm red">Remove</button>
+    <button @click="removeTodo(id)" class="sm red">Remove</button>
 </template>
 <script>
 export default{
@@ -14,6 +14,12 @@ export default{
             type: Number,
             required: true,
             default: new Date().getTime()
+        }
+    },
+    inject:{
+        removeTodo:{
+            type:Function,
+            required:true
         }
     }
 }

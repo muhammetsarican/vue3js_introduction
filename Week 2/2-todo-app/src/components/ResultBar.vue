@@ -1,9 +1,9 @@
 <template>
-    <small class="mt-2 d-flex justify-content-end green">There are {{ itemcount }} todos.</small>
+    <small class="mt-2 d-flex justify-content-end green">There are {{ ProvideData.todoList.length }} todos.</small>
 </template>
 
 <script>
     export default{
-        props: ["itemcount"]
+        inject: ["ProvideData"]
     }
 </script>
