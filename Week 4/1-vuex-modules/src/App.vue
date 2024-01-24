@@ -2,7 +2,11 @@
   <h3>{{ this.$store.state.title }}</h3>
   <h4>{{ this.$store.state.contactPage.contactTitle }}</h4>
   <h5>{{ getTitle }}</h5>
-  <h6>{{ getItemList }}</h6>
+  <hr>
+  <h6>Item List</h6>
+  <ul v-for="item in getItemList" :key="item.id">
+    <li>{{ item.title }}</li>
+  </ul>
 </template>
 <script>
 export default {
