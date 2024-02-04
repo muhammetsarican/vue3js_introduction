@@ -6,6 +6,9 @@
     <router-link class="nav-link" active-class="active" to="/about">
       About Me
     </router-link>
+    <router-link class="nav-link" active-class="active" to="/details/123">
+      Detail About User
+    </router-link>
     <router-view></router-view>
   </div>
 </template>
