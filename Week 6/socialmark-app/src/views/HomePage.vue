@@ -1,5 +1,15 @@
 <template>
-    <div>
-        <h1>Home Page</h1>
+    <AppHeader />
+    <div class="flex flex-row">
+        <Sidebar />
+        <BookmarkList />
     </div>
 </template>
+<script>
+import Sidebar from "@/components/home/SidebarComp"
+export default{
+    components:{
+        Sidebar
+    }
+}
+</script>

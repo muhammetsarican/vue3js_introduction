@@ -15,7 +15,12 @@ const routes=[
         name:"RegisterPage",
         path:"/register",
         component:()=>import("@/views/RegisterPage")
-    }
+    },
+    {
+        name:"NewBookmarkPage",
+        path:"/newbookmark",
+        component:()=>import("@/views/NewBookmarkPage")
+    },
 ]
 export default createRouter({
     routes,

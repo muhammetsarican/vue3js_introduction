@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": "5e3b",
+      "fullname": "Muhammet Sarıcan",
+      "username": "muhammetsarican",
+      "pswd": "1c55e0add32cb5aada4c057851731bfefe368de6"
+    },
+    {
+      "id": "ac6d",
+      "fullname": "Musa Apaydın",
+      "username": "musaapaydin",
+      "pswd": "1c55e0add32cb5aada4c057851731bfefe368de6"
+    },
+    {
+      "id": "1ac4",
+      "fullname": "Alim Kıl",
+      "username": "alimkil",
+      "pswd": "1c55e0add32cb5aada4c057851731bfefe368de6"
+    }
+  ],
+  "bookmarks": [],
+  "categories": []
+}
