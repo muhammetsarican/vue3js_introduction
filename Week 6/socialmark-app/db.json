@@ -19,6 +19,63 @@
       "pswd": "1c55e0add32cb5aada4c057851731bfefe368de6"
     }
   ],
-  "bookmarks": [],
-  "categories": []
+  "bookmarks": [
+    {
+      "id": "75bd",
+      "title": "My thinks about vue",
+      "url": "www.vuejs.com",
+      "categoryId": "1",
+      "description": "I think vue is great.",
+      "userId": "5e3b",
+      "createdAt": "2024-02-28T14:32:45.367Z"
+    },
+    {
+      "id": "33e2",
+      "title": "My thinks about react",
+      "url": "www.reactjs.com",
+      "categoryId": "2",
+      "description": "I think react is so useful and efficent.",
+      "userId": "5e3b",
+      "createdAt": "2024-02-28T14:33:31.015Z"
+    },
+    {
+      "id": "a68a",
+      "title": "My thinks about angular",
+      "url": "www.angularjs.com",
+      "categoryId": "3",
+      "description": "I dont have any idea about angular because I didn't use it before.",
+      "userId": "5e3b",
+      "createdAt": "2024-02-28T14:35:58.540Z"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Vue.js",
+      "id": "1"
+    },
+    {
+      "name": "React.js",
+      "id": "2"
+    },
+    {
+      "name": "Angular.js",
+      "id": "3"
+    },
+    {
+      "name": "Frontend",
+      "id": "4"
+    },
+    {
+      "name": "Backend",
+      "id": "5"
+    },
+    {
+      "name": "Cloud",
+      "id": "6"
+    },
+    {
+      "name": "Social Life",
+      "id": "7"
+    }
+  ]
 }
