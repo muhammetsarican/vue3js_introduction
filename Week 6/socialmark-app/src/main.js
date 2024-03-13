@@ -13,6 +13,7 @@ const app=createApp(App);
 app.component("AppHeader", appHeader);
 app.component("BookmarkList", appBookmarkList);
 app.config.globalProperties.$appAxios=appAxios;
+app.config.globalProperties.$log=console.log;
 
 app.use(store);
 app.use(router);

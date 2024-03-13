@@ -22,6 +22,30 @@ const routes=[
         path:"/newbookmark",
         component:()=>import("@/views/NewBookmarkPage")
     },
+    {
+        name:"FavoritesPage",
+        path:"/favorites",
+        meta:{
+            componentName:"BookmarkList"
+        },
+        component:()=>import("@/views/Account")
+    },
+    {
+        name:"LikesPage",
+        path:"/likes",
+        meta:{
+            componentName:"BookmarkList"
+        },
+        component:()=>import("@/views/Account")
+    },
+    {
+        name:"SettingsPage",
+        path:"/settings",
+        meta:{
+            componentName:"settingsComponent"
+        },
+        component:()=>import("@/views/Account")
+    },
 ]
 const router= createRouter({
     routes,

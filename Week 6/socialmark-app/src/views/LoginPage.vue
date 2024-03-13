@@ -25,6 +25,7 @@ export default{
   methods:{
     onSubmit(){
       const password=CryptoJs.HmacSHA1(this.userData.pswd, this.$store.getters._getSaltKey).toString();
+      console.log(password)
 
       this.$appAxios.get(`/users?username=${this.userData.username}&pswd=${password}`)
       .then((loginResponse)=>{

@@ -26,7 +26,8 @@ export default{
   },
   methods:{
     onSave(){
-      const password=CryptoJs.HmacSHA1(this.userInfo.password, this.$store.getter._getSaltKey).toString();
+      const password=CryptoJs.HmacSHA1(this.userInfo.pswd, this.$store.getters._getSaltKey).toString();
+      console.log(password);
 
       this.$appAxios.post("/users",{...this.userInfo, pswd:password})
       .then((response)=>{
