@@ -47,6 +47,7 @@ export default {
                 createdAt: new Date()
             }
             this.$appAxios.post("/bookmarks", bookmark).then((postResponse) => {
+                this.$socket.emit("NEW_BOOKMARK_EVENT", postResponse.data);
                 this.$router.push({ name: "HomePage" });
             })
         }

@@ -16,7 +16,7 @@ export default {
     },
     data() {
         return {
-            bookmarkList: []
+            bookmarkList: [],
         }
     },
     created() {
@@ -24,6 +24,6 @@ export default {
             console.log(bookmarkListResponse.data);
             this.bookmarkList = bookmarkListResponse.data || [];
         })
-    }
+    },
 }
 </script>
