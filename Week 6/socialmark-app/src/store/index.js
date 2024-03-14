@@ -7,6 +7,8 @@ var ls = new SecureLS({ isCompression: false });
 export default createStore({
     state: {
         user: null,
+        userBookmarks: null,
+        userLikes: null,
         saltKey: "IamworkingVueJsfromkablosuzkediyoutubechannel"
     },
     mutations: {
@@ -15,6 +17,12 @@ export default createStore({
         },
         logoutUser(state){
             state.user=null;
+        },
+        setBookmarks(state, userBookmarks){
+            state.userBookmarks=userBookmarks;
+        },
+        setLikes(state, userLikes){
+            state.userLikes=userLikes;
         },
         addToLikes(state, bookmarksId){
             state.user.likes=bookmarksId;
@@ -30,8 +38,12 @@ export default createStore({
             delete user?.pswd;
             return user;
         },
-        _userLikes: state=>state.user?.likes || [],
-        _userBookmarks: state=>state.user?.bookmarks || [],
+        _userLikes(state){
+            return state.userLikes;
+        },
+        _userBookmarks(state){
+            return state.userBookmarks;
+        },
         _currentUserId: state=>state.user?.id,
         _getSaltKey: state => state.saltKey,
     },

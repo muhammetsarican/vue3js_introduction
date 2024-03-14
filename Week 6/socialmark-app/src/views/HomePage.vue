@@ -24,6 +24,12 @@ export default {
         this.$appAxios.get("/bookmarks?_embed=category&_embed=user").then((getResponse) => {
             console.log(getResponse);
             this.bookmarkList = getResponse.data;
+        }),
+        this.$appAxios.get("/user_bookmarks?_embed=user&_embed=bookmark").then(userBookmarksResponse=>{
+            this.$store.commit("saveUserBookmarks", userBookmarksResponse.data);
+        }),
+        this.$appAxios.get("/user_likes?_embed=user&_embed=bookmark").then(userLikesResponse=>{
+            this.$store.commit("saveUserLikes", userLikesResponse.data);
         })
     },
     methods: {

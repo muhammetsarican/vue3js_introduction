@@ -57,6 +57,8 @@
       "createdAt": "2024-02-28T14:35:58.540Z"
     }
   ],
+  "user_likes": [],
+  "user_bookmarks": [],
   "categories": [
     {
       "name": "Vue.js",

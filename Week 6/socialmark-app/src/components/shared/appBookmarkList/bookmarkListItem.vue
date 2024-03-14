@@ -6,7 +6,7 @@
                 item.title }}</a>
             <div class="flex items-center justify-center mt-2 gap-x-1">
                 <button class="like-btn group" :class="{
-                'bookmark-item-active': alreadyLiked
+                'like-item-active': alreadyLiked
             }" @click="likeItem">
                     <svg xmlns="http://www.w3.org/2000/svg" class="fill-current group-hover:text-white" height="24"
                         viewBox="0 0 24 24" width="24">
@@ -65,10 +65,16 @@ export default {
             return this.item.user.fullname || "-";
         },
         alreadyLiked() {
-            return this._userLikes.indexOf(this.item.id) > -1;
+            return Boolean(this.likedItem);
         },
         alreadyBookmarked() {
-            return this._userBookmarks.indexOf(this.item.id) > -1;
+            return Boolean(this.bookmarkedItem);
+        },
+        likedItem(){
+            return this._userLikes?.find(userLike=>userLike.userId===this._getCurrentUser.id && userLike.bookmarkId==this.item.id);
+        },
+        bookmarkedItem(){
+            return this._userBookmarks?.find(userBookmark=>userBookmark.userId===this._getCurrentUser.id && userBookmark.bookmarkId===this.item.id);
         },
         ...mapGetters(["_getCurrentUser", "_userLikes", "_userBookmarks"])
     },
@@ -77,23 +83,35 @@ export default {
             moment(date).fromNow()
         },
         likeItem() {
-            let likes = [...this._userLikes];
-            if(!this.alreadyLiked) likes=[...likes, this.item.id];
-            else likes=likes.filter((like)=>like!==this.item.id);
-            console.log("user likes:", likes, this._getCurrentUser.id);
-            this.$appAxios.patch(`/users/${this._getCurrentUser.id}`, { likes }).then((patchResponse) => {
-                console.log(patchResponse);
-                this.$store.commit("addToLikes", likes);
+            this.$appAxios({
+                url: this.alreadyLiked ? `/user_likes/${this.likedItem.id}` : "/user_likes",
+                method: this.alreadyLiked ? "DELETE" : "POST",
+                data: {
+                    userId: this._getCurrentUser.id,
+                    bookmarkId: this.item.id
+                }
+            }).then(user_likes_response=>{
+                let likes=[...this._userLikes];
+                if(this.alreadyLiked) likes=likes.filter(like=>like.id!==this.likedItem.id);
+                else likes=[...likes, user_likes_response.data];
+
+                this.$store.commit("setLikes", likes);
             })
         },
         bookmarkItem() {
-            let bookmarks = [...this._userBookmarks];
-            if(!this.alreadyBookmarked) bookmarks=[...bookmarks, this.item.id];
-            else bookmarks=bookmarks.filter((bookmark)=>bookmark!==this.item.id);
-            console.log("user bookmarks:", bookmarks, this._getCurrentUser.id);
-            this.$appAxios.patch(`/users/${this._getCurrentUser.id}`, { bookmarks }).then((patchResponse) => {
-                console.log(patchResponse);
-                this.$store.commit("addToBookmarks", bookmarks);
+            this.$appAxios({
+                url: this.alreadyBookmarked ? `/user_bookmarks/${this.bookmarkedItem.id}` : "/user_bookmarks",
+                method: this.alreadyBookmarked ? "DELETE" : "POST",
+                data: {
+                    userId: this._getCurrentUser.id,
+                    bookmarkId: this.item.id
+                }
+            }).then(user_bookmark_response=>{
+                let bookmarks=[...this._userBookmarks];
+                if(this.alreadyBookmarked) bookmarks=bookmarks.filter(bookmark=>bookmark.id!==this.bookmarkedItem.id);
+                else bookmarks=[...bookmarks, user_bookmark_response.data];
+
+                this.$store.commit("setBookmarks", bookmarks);
             })
         }
     }
