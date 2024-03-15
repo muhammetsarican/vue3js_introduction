@@ -47,7 +47,13 @@ export default {
                 createdAt: new Date()
             }
             this.$appAxios.post("/bookmarks", bookmark).then((postResponse) => {
-                this.$socket.emit("NEW_BOOKMARK_EVENT", postResponse.data);
+                Object.keys(this.userData)?.forEach(field=>(this.userData[field]=null));
+                const socketData={
+                    ...postResponse.data,
+                    user:this._getCurrentUser,
+                    category: this.categoryList?.find(category=>category.id===bookmark.categoryId)
+                }
+                this.$socket.emit("NEW_BOOKMARK_EVENT", socketData);
                 this.$router.push({ name: "HomePage" });
             })
         }

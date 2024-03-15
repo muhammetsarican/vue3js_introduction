@@ -33,10 +33,10 @@ export default {
                 this.bookmarkList = getResponse.data;
             });
             this.$appAxios.get("/user_bookmarks?_embed=user&_embed=bookmark").then(userBookmarksResponse => {
-                this.$store.commit("saveUserBookmarks", userBookmarksResponse.data);
+                this.$store.commit("setBookmarks", userBookmarksResponse.data);
             });
             this.$appAxios.get("/user_likes?_embed=user&_embed=bookmark").then(userLikesResponse => {
-                this.$store.commit("saveUserLikes", userLikesResponse.data);
+                this.$store.commit("setLikes", userLikesResponse.data);
             });
         },
         updateBookmarkList(categoryId) {

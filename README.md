@@ -7,5 +7,4 @@
 
 - **Week 6/**
 - *socialmark-app*: Created an app to repeat all we've learned. 
-- *Technologies*:
-- Vue-Cli, Vuex, Vue-Router, Socket.io, json-server
+- *Technologies*: Vue-Cli, Vuex, Vue-Router, Socket.io, Express Js, Cors, Json-Server

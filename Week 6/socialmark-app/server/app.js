@@ -32,7 +32,9 @@ server.listen(PORT, ()=>{
 
         socket.on("NEW_BOOKMARK_EVENT",(bookmark)=>{
             console.log("new bookmark received: ", bookmark);
-            io.emit("NEW_BOOKMARK_ADDED");
+            // io.emit("NEW_BOOKMARK_ADDED", bookmark);
+            //! Send data to all users without sender
+            socket.broadcast.emit("NEW_BOOKMARK_ADDED", bookmark);
         })
     })
 })
