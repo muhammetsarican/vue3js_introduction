@@ -1,3 +1,12 @@
+<script setup>
+import {computed} from "vue";
+const props=defineProps({items:Array});
+
+const subTotal=computed(()=>props.items.reduce((total, item)=>total+item.total_price, 0));
+const taxTotal=computed(()=>subTotal.value*0.18);
+const total=computed(()=>subTotal.value+taxTotal.value);
+</script>
+
 <template>
   <section
     id="bill-summary"
@@ -5,15 +14,15 @@
   >
     <p class="text-gray-500 capitalize">
       subtotal:
-      <span>100,00</span>
+      <span>{{subTotal}},00</span>
     </p>
     <p class="text-gray-400 capitalize">
       taxes:
-      <span>18,00</span>
+      <span>{{taxTotal}},00</span>
     </p>
     <p class="text-gray-300 capitalize">
       total:
-      <span>118,00</span>
+      <span>{{total}},00</span>
     </p>
   </section>
 </template>

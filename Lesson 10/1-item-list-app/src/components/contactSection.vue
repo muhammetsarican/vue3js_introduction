@@ -1,3 +1,8 @@
+<script setup>
+defineProps({
+  contact:Object
+})
+</script>
 <template>
   <section id="bill-info" class="">
     <app-heading :title="'Bill Info'" />
@@ -9,6 +14,7 @@
           name=""
           id="name"
           class="bg-gray-800 rounded-sm px-3 py-1"
+          v-model="contact.contact_name"
         />
       </div>
       <div class="flex gap-1 flex-col">
@@ -18,6 +24,7 @@
           name=""
           id="mail"
           class="bg-gray-800 rounded-sm px-3 py-1"
+          v-model="contact.email"
         />
       </div>
       <div id="address-info" class="grid gap-5 grid-cols-3">
@@ -28,6 +35,7 @@
             name=""
             id="mail"
             class="bg-gray-800 rounded-sm px-3 py-1"
+            v-model="contact.city"
           />
         </div>
         <div class="flex gap-1 flex-col">
@@ -37,6 +45,7 @@
             name=""
             id="mail"
             class="bg-gray-800 rounded-sm px-3 py-1"
+            v-model="contact.zipcode"
           />
         </div>
         <div class="flex gap-1 flex-col">
@@ -46,6 +55,7 @@
             name=""
             id="mail"
             class="bg-gray-800 rounded-sm px-3 py-1"
+            v-model="contact.country"
           />
         </div>
       </div>

@@ -19,3 +19,4 @@
 
 - **Lesson 10/**
  *0-script-setup*: We've learned script setup method and some functions, methods used in it.
+ *1-item-list-app*: We started to develope new app, and this app keep clients invoices. (delete and update operations not added yet, will be added soon.)
