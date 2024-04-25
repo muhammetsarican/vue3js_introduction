@@ -14,7 +14,7 @@ const saveInvoice = (invoice) => {
 };
 
 const InvoiceSidebarItem = (invoice) => {
-  state.editableInvoiceItem=invoice;
+  state.editableInvoiceItem = invoice;
 };
 </script>
 
@@ -24,6 +24,9 @@ const InvoiceSidebarItem = (invoice) => {
       :invoiceList="invoiceList"
       :InvoiceSidebarItem="InvoiceSidebarItem"
     />
-    <invoice-content :saveInvoice="saveInvoice" :editableInvoiceItem="state.editableInvoiceItem"/>
+    <invoice-content
+      :saveInvoice="saveInvoice"
+      :editableInvoiceItem="state.editableInvoiceItem"
+    />
   </div>
 </template>
