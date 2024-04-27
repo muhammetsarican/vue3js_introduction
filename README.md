@@ -24,3 +24,13 @@
     
     *0-script-setup*: We've learned script setup method and some functions, methods used in it.
     *1-item-list-app*: We started to develope new app, and this app keep clients invoices. (delete and update operations not added yet, will be added soon.)
+
+- **Lesson 11/**
+    
+    *suspense-example*: At this part, we've learned how to load components as asynchronous and how can we make loader different way.
+    *teleport-example*: At this part, we've learned how to teleport content to other component with teleport element.
+    *namespaced-components*: At this part, we've learned how to import different components from one file as group.
+
+- **Lesson 12/**
+
+    *0-socialmark-app-composition-api*: We converted the socialmark app from option api to composition api.
