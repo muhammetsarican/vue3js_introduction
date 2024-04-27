@@ -3,9 +3,37 @@
 
 **Little note**: If apps not works, change folder name to 'Week' and then run again.
 
+- **Lesson 1/**
+
+    *1-vue-instance*: We've learned how to create a vue app with html and js.
+    *2-events*: At this part we created an input element and we bind it to vue function.
+    *3-counter-app*: We created counter app with we've learned information up to the present.
+    *4-reactivity-examples*: We created an app for repeating our knowledge.
+    *5-life-cycle-hooks*: We've learned life cycle hooks and how to manage an app with them.
+    *6-class-style-binding*: At this part we've learned how to add or change element style with vue.
+    *7-conditions*: At this part, we've learned how to add conditions to our apps.
+    *8-loops*: We've learned how to use loops on vue app.
+    
+- **Lesson 2/**
+
+    *0-component*: We created first component at this lesson.
+    *1-vue-cli*: We built our vue app with cli.
+    *2-todo-app*: We created a todo app with we've learned informations.
+
+- **Lesson 3/**
+
+    *0-component-slots*: At this part, we covered how to add components in cli app.
+    *1-dynamic-components*: At this part, we covered how to use components as dynamically.
+    *2-http-requests*: We covered how to get a data and how to use them effectively.
+
+- **Lesson 4/**
+
+    *0-vuex-introduction*: We covered how to keep out datas in vuex, it similar to redux at react.
+    *1-vuex-modules*: We split our vuex app to modules.
 
 - **Lesson 5/**
-
+    
+    *0-vue-router*: At this part we covered how to make routes and how to manage them.
     *1-vue-router-app*: Created a bookmark app with using vue router, bootstrap, axios and json-server.
 
 - **Lesson 6/**
